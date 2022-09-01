@@ -12,3 +12,4 @@ Concientizar não apenas o publico que frequenta este estabelecimento, alunos, p
 
 
 4° Quais foram os resultados?
+Com o bom processo da pesquisa, cada vez mais, mais professores vinham mostrarando grande interesse, e com isso cada vez mais o projeto é reconhecido não apenas por professores, mas as sociedade como um todo. 
