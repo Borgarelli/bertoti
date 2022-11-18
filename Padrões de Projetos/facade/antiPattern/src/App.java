@@ -1,24 +1,37 @@
-import forma.Circulo;
-import forma.Forma;
-import forma.Quadrado;
-import forma.Retangulo;
-import texto.Paragrafo;
-import texto.Texto;
-import texto.Titulo;
+import Entrada_saida.Monitor;
+import Entrada_saida.Mouse;
+import Entrada_saida.Teclado;
+import Peças.Cpu;
+import Peças.HD;
+import Peças.Memoria;
+import Peças.SO;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Forma quadrado = new Quadrado();
-        Forma circulo = new Circulo();
-        Forma retangulo = new Retangulo();
+        
+        System.out.println("Montando novo computador...");
 
-        Texto titulo = new Titulo();
-        Texto paragrafo = new Paragrafo();
+        Memoria memoria = new Memoria();
+        memoria.adicionarMemoria();
 
-        titulo.escrever();
-        quadrado.desenhar();
-        paragrafo.escrever();
-        circulo.desenhar();
-        retangulo.desenhar();
-    }
+        HD hd = new HD();
+        hd.adicionarHD();
+
+        Cpu cpu = new Cpu();
+        cpu.adicionarCpu();
+
+        Mouse mouse = new Mouse();
+        mouse.adicionarMouse();
+
+        Teclado teclado = new Teclado();
+        teclado.adicionarTeclado();
+
+        Monitor monitor = new Monitor();
+        monitor.adicionarMonitor();
+
+        SO so = new SO();
+        so.instalarSO();
+
+        System.out.println("Computador montado!");
+}
 }
