@@ -1,4 +1,4 @@
-public class Principal {
+public class Singleton {
     public static void main(String[] args){
         GerenciadorImpressão g1 = GerenciadorImpressão.getInstance(); //Puxa o metódo criado dentro da classe Gerenciador
         GerenciadorImpressão g2 = GerenciadorImpressão.getInstance();
