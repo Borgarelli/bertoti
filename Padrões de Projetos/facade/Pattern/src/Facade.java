@@ -1,46 +1,43 @@
-import forma.Circulo;
-import forma.Forma;
-import forma.Quadrado;
-import forma.Retangulo;
-import texto.Paragrafo;
-import texto.Texto;
-import texto.Titulo;
+import Entrada_saida.Monitor;
+import Entrada_saida.Mouse;
+import Entrada_saida.Teclado;
+import Peças.Cpu;
+import Peças.HD;
+import Peças.Memoria;
+import Peças.SO;
 
 public class Facade {
-    private Forma circulo;
-    private Forma quadrado;
-    private Forma retangulo;
 
-    private Texto titulo;
-    private Texto paragrafo;
-
+    private Memoria memoria;
+    private HD hd;
+    private Cpu cpu;
+    private Mouse mouse;
+    private Teclado teclado;
+    private Monitor monitor;
+    private SO so;
+    
     public Facade(){
-        this.circulo = new Circulo();
-        this.quadrado = new Quadrado();
-        this.retangulo = new Retangulo();
 
-        this.titulo = new Titulo();
-        this.paragrafo = new Paragrafo();
+        this.memoria = new Memoria();
+        this.hd = new HD();
+        this.cpu = new Cpu();
+        this.mouse = new Mouse();
+        this.teclado = new Teclado();
+        this.monitor = new Monitor();
+        this.so = new SO();
     }
 
-    public void desenharCirculo(){
-        this.circulo.desenhar();
-    }
+    public void MontarPC(){
+        System.out.println("Montando um novo pc");
 
-    public void desenharQuadrado(){
-        this.quadrado.desenhar();
-    }
+        memoria.adicionarMemoria();
+        hd.adicionarHD();
+        cpu.adicionarCpu();
+        mouse.adicionarMouse();
+        teclado.adicionarTeclado();
+        monitor.adicionarMonitor();
+        so.instalarSO();
 
-    public void desenharRetangulo(){
-        this.retangulo.desenhar();
+         System.out.println("Computador montado!");
     }
-
-    public void escreverTitulo(){
-        this.titulo.escrever();
-    }
-
-    public void escreverParagrafo(){
-        this.paragrafo.escrever();
-    }
-
 }
