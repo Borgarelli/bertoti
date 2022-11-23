@@ -1,0 +1,70 @@
+@startuml Facade
+class Monitor {
+    +void AdicionarES();
+}
+class Mouse {
+    +void AdicionarES();
+}
+class Teclado{
+    +void AdicionarES();
+}
+Monitor --> Entrada_Saida
+
+Mouse --> Entrada_Saida
+
+Teclado --> Entrada_Saida
+
+interface Entrada_Saida {
+    
+}
+
+class Cpu {
+    +void AdicionarPeca();
+}
+
+class HD {
+    +void AdicionarPeca();
+}
+
+class Memoria {
+    +void AdicionarPeca();
+}
+
+class SO {
+    +void AdicionarPeca();
+}
+
+interface Peças {
+    
+}
+
+Cpu --> Peças
+
+HD --> Peças
+
+Memoria --> Peças
+
+SO --> Peças
+
+Entrada_Saida --> Facade
+
+Peças --> Facade
+
+class Facade {
+    -ES Monitor;
+    -ES Mouse;
+    -ES Teclado;
+    -Peça Cpu;
+    -Peça HD;
+    -Peça Memoria;
+    -Peça SO;
+
+    +void AdicionarMonitor();
+    +void AdicionarMouse();
+    +void AdicionarTeclado();
+    +void AdicionarCpu();
+    +void AdicionarHD();
+    +void AdicionarMemoria();
+    +void AdicionarSO();
+}
+@enduml
