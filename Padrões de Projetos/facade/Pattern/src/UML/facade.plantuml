@@ -8,15 +8,14 @@ class Mouse {
 class Teclado{
     +void AdicionarES();
 }
-Monitor --> Entrada_Saida
 
-Mouse --> Entrada_Saida
+Monitor --> Facade 
 
-Teclado --> Entrada_Saida
+Mouse --> Facade
 
-interface Entrada_Saida {
-    
-}
+Teclado --> Facade
+
+
 
 class Cpu {
     +void AdicionarPeca();
@@ -34,21 +33,17 @@ class SO {
     +void AdicionarPeca();
 }
 
-interface Peças {
-    
-}
 
-Cpu --> Peças
 
-HD --> Peças
+Cpu --> Facade
 
-Memoria --> Peças
+HD --> Facade
 
-SO --> Peças
+Memoria --> Facade
 
-Entrada_Saida --> Facade
+SO --> Facade
 
-Peças --> Facade
+
 
 class Facade {
     -ES Monitor;
